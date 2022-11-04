@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">
+      Lista de Producto </div>
+    <div class="card-body">
+        <a class="btn btn-primary" [routerLink]="['/productos/registrar']">Registrar nuevo</a>
+      <table class="table table-striped table-hover">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th class="col-sm-1 text-center">ID</th>
+            <th class="col-md-3 text-center">NOMBRE</th>
+            <th class="col-md-3 text-center">CATEGORIA</th>
+            <th class="col-md-1">PRECIO</th>
+            <th class="col-md-1">CANTIDAD</th>
+            <th class="col-md-3 text-center">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let producto of productos">
+            <td class="text-center">{{producto.idproducto}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.categoria}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.cantidad}}</td>
+            <td>
+              <button (click)= "actualizarProducto(producto.idproducto)" class="btn btn-info">Editar</button>
+              <button (click)= "verDetallesDelProducto(producto.idproducto)" class="btn btn-primary" style="margin-left : 10px;">Detalles</button>
+              <button (click)= "eliminarProducto(producto.idproducto)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+      Lista de Producto </div>
+    <div class="card-body">
+        <a class="btn btn-primary" [routerLink]="['/productos/registrar']">Registrar nuevo</a>
+      <table class="table caption-top">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">CATEGORIA</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">CANTIDAD</th>
+            <th scope="col">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Producto of listaProductos">
+            <td>{{Producto.idproducto}}</td>
+            <td>{{Producto.nombre}}</td>
+            <td>{{Producto.categoria}}</td>
+            <td>{{Producto.precio}}</td>
+            <td>{{Producto.cantidad}}</td>
+            <td><i class="fa-solid fa-circle-trash">
+            <button (click)="Editar(Producto)" type="button" class="btn btn-outline-primary">Editar</button></i></td>
+            <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

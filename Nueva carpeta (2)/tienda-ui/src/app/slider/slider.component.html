@@ -1,0 +1,24 @@
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor= "let producto of productos" ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="{{producto.imagen}}" alt="Random first slide" style="width: 1200px;" height="400">
+      </div>
+      <div class="carousel-caption">
+        <h3>Producto: {{producto.nombre}}</h3>
+        <p>Categoria: {{producto.categoria}}</p>
+      </div>
+    </ng-template>
+</ngb-carousel>
+
+<h1>Productos</h1>
+<br>
+
+<div class="card" style="width: 68rem;" *ngFor= "let producto of productos">
+    <img class="card-img-top" src="{{producto.imagen}}">
+    <div class="card-body">
+      <h5 class="card-title">{{producto.nombre}}</h5>
+      <p class="card-text">{{producto.categoria}}</p>
+    </div>
+  </div>
+    
+
